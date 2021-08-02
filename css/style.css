@@ -731,8 +731,7 @@ input[type='checkbox'] {
   display: flex;
 }
 
-header {
-  width: 100%;
+.removed-header {
   height: 67px;
   background: #00498D;
   display: flex;
@@ -743,7 +742,7 @@ header {
   font-weight: bold;
 }
 
-aside {
+.removed-sidebar {
   background: #00C48C;
   width: 121px;
   display: flex;
@@ -754,14 +753,14 @@ aside {
   font-weight: bold;
   min-height: 100vh;
 }
-aside span {
+.removed-sidebar span {
   transform: rotate(-90deg);
   white-space: nowrap;
 }
 
 main {
-  flex-grow: 1;
   padding-bottom: 37px;
+  width: calc(100% - 121px);
 }
 
 .content {
@@ -787,7 +786,7 @@ main {
   height: 39px;
 }
 .content__right .datapicker__show, .content__right .datapicker__hidden {
-  background: #F5F9FB;
+  background-color: #F5F9FB;
 }
 .content__right-title {
   margin-bottom: 12px;
