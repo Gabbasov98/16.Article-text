@@ -1,3 +1,7 @@
+// const { Chart } = require("./chart.min");
+
+// const { Chart } = require("./chart.min");
+
 $(document).ready(function() {
     $(" .select").niceSelect()
 
@@ -86,220 +90,87 @@ $(document).ready(function() {
     }
 
 
-    function Diagram() {
-        // var ctx = document.getElementById("myChart3");
-        // var myChart = new Chart(ctx, {
-        //     type: 'line',
-        //     data: {
-        //         labels: [], //Подписи оси x
-        //         // axisX: {
-        //         //     valueFormatString: "MMM",
-        //         //     interval: 1,
-        //         //     intervalType: "month"
-        //         // },
-        //         // axisY: {
-        //         //     includeZero: false
+    function lineDiagram() {
+        // Chart.defaults.scale.display = false
 
-        //         // },
-        //         datasets: [{
-        //                 // label: 'f(x)', //Метка
-        //                 data: [
-        //                     { x: 'Янв', y: 17 },
-        //                     { x: 'Фев', y: 30 },
-        //                     { x: 'Март', y: 28 },
-        //                     { x: 'Апр', y: 45 },
-        //                     { x: 'Май', y: 38 },
-        //                     { x: 'Июнь', y: 20 },
-        //                     { x: 'Июль', y: 20 },
-        //                     { x: 'Авг', y: 35 },
-        //                     { x: 'Сен', y: 48 },
-        //                     { x: 'Окт', y: 45 },
-        //                     { x: 'Ноя', y: 35 },
-        //                     { x: 'Дек', y: 25 },
-        //                 ], //Данные
-        //                 borderColor: '[#00498D]', //Цвет
-        //                 borderWidth: 2, //Толщина линии
-        //                 fill: false, //Не заполнять под графиком
-        //                 dataPoints: [
-
-        //                 ]
-        //             }
-        //             //Можно добавить другие графики
-        //         ]
-        //     },
-
-        //     options: {
-        //         responsive: true, //Вписывать в размер canvas
-        //         scales: {
-        //             xAxis: [{
-        //                 display: true,
-        //                 ticks: {
-        //                     fontSize: 6,
-        //                 }
-        //             }],
-        //             // yAxes: [{
-        //             //     display: false
-        //             // }]
-
-        //         },
-        //         plugins: {
-        //             legend: {
-        //                 labels: {
-        //                     // This more specific font property overrides the global property
-        //                     font: {
-        //                         size: 14
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //     }
-        // });
-        // // myData = [15, 27, 29, 42, 38, 20, 21, 40, 44, 42, 30, 25]
-        // // myDataLabels = ['Янв', "Фев", "Март", "Апр", "Май", "Июнь", "Июль", "Авг", "Сен", "Окт", "Ноя", "Дек"]
-        // //     // Заполняем данными
-        // // for (var x = 0; x < myData.length; x++) {
-        // //     myChart.data.labels.push('' + myDataLabels[x]);
-        // //     myChart.data.datasets[0].data.push(myData[x]);
-        // // }
-        // // Обновляем
-        // myChart.render();
-
-        // function f(x) { //Вычисление нужной функции
-        //     return Math.sin(x);
-        // }
-        // const DATA_COUNT = 7;
-        // const NUMBER_CFG = { count: DATA_COUNT, min: -100, max: 100 };
-
-        // const labels = Utils.months({ count: 7 });
-        // const data = {
-        //     labels: labels,
-        //     datasets: [{
-        //             label: 'Dataset 1',
-        //             data: Utils.numbers(NUMBER_CFG),
-        //             borderColor: Utils.CHART_COLORS.red,
-        //             backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
-        //         },
-        //         {
-        //             label: 'Dataset 2',
-        //             data: Utils.numbers(NUMBER_CFG),
-        //             borderColor: Utils.CHART_COLORS.blue,
-        //             backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
-        //         }
-        //     ]
-        // };
-        // var ctx = document.getElementById("myChart3");
-        // var myChart = new Chart(ctx, {
-        //     type: 'line',
-        //     data: data,
-        //     options: {
-        //         responsive: true,
-        //         plugins: {
-        //             legend: {
-        //                 position: 'top',
-        //             },
-        //             title: {
-        //                 display: true,
-        //                 text: 'Chart.js Line Chart'
-        //             }
-        //         }
-        //     },
-        // });
         // var speedCanvas = document.getElementById("myChart3");
 
-        // Chart.defaults.defaultFontFamily = "Proxima Nova";
-        // Chart.defaults.font.size = 10;
-        // Chart.defaults.backgroundColor = "rgb(0, 73, 141,1)";
-        // Chart.defaults.borderColor = "rgb(0, 73, 141,1)";
-        // Chart.defaults.color = '#9FA2B4';
+        // // Chart.defaults.global.defaultFontFamily = "Lato";
+        // // Chart.defaults.global.defaultFontSize = 18;
 
         // var speedData = {
-        //     labelAngle: 0,
-
-        //     labels: ['Янв', "Фев", "Март", "Апр", "Май", "Июнь", "Июль", "Авг", "Сен", "Окт", "Ноя", "Дек"],
+        //     labels: ["Янв", "10s", "20s", "30s", "40s", "50s", "60s"],
         //     datasets: [{
-        //         data: [15, 27, 29, 42, 38, 20, 21, 40, 44, 42, 30, 25],
-        //         tension: 0.4,
-        //         font: {
-        //             size: 10
-        //         }
+        //         label: "Статистика просмотров",
+        //         // label: false,
+        //         data: [0, 59, 75, 20, 20, 55, 40],
+        //         lineTension: 1,
+        //         fill: true,
+        //         backgroundColor: 'rgba(55, 81, 255, 0.1)', // Цвет фона
+        //         borderColor: 'rgba(0, 73, 141, 1)', // Цвет границы
+        //         borderWidth: 2,
         //     }]
         // };
 
         // var chartOptions = {
         //     legend: {
         //         display: false,
-
+        //         // position: 'top left',
         //         // labels: {
-        //         //     boxWidth: 80,
-        //         //     fontColor: 'black',
-        //         //     fontSize: 10
-        //         // }
+        //         //     boxWidth: 0,
+        //         //     fontColor: 'yellow'
+        //         // },
+
         //     }
         // };
 
         // var lineChart = new Chart(speedCanvas, {
         //     type: 'line',
-        //     axisX: {
-        //         // valueFormatString: "DD-MMM",
-        //         // interval: 10,
-        //         // intervalType: "day",
-        //         labelAngle: 0,
-        //         // labelFontColor: "rgb(0,75,141)",
-        //         // minimum: new Date(2012, 06, 10)
-        //     },
-        //     axisY: {
-        //         // title: "Views on YouTube",
-        //         // interlacedColor: "azure",
-        //         // tickColor: "azure",
-        //         // titleFontColor: "rgb(0,75,141)",
-        //         // valueFormatString: "#M,,.",
-        //         // interval: 100000000
-        //     },
         //     data: speedData,
-        //     options: {
-        //         // chartOptions,
-        //         font: {
-        //             size: 10,
-        //             labelAngle: 0,
-        //         }
-        //     }
+        //     options: chartOptions
         // });
-        // console.log(Chart.defaults)
-        const ctx = document.querySelector(".myChart3");
-        // Tags - это метки, которые идут по оси X.  
-        const tags = ["Январь", "Февраль", "Март", "Апрель"]
-            // У нас может быть несколько наборов данных. Давайте начнем с одного
-        const dataSales2020 = {
-            label: "Продажи за месяц",
-            data: [5000, 1500, 8000, 5102], // Данные представляют собой массив, который должен иметь такое же количество значений, как и количество тегов.
-            backgroundColor: 'rgba(54, 162, 235, 0.2)', // Цвет фона
-            borderColor: 'rgba(54, 162, 235, 1)', // Цвет границ
-            borderWidth: 1, // Толщина границ
+        // var ctx = document.getElementById('myChart2').getContext('2d');
+        Chart.defaults.scale.beginAtZero = true;
+        Chart.defaults.scale.ticks.maxRotation = 0;
+        Chart.defaults.scale.ticks.backdropColor = 'rgba(159, 162, 180,1)'
+            // Chart.defaults.scale.ticks.padding = 10;
+        Chart.defaults.font.size = 10;
+        Chart.defaults.font.family = 'Proxima Nova';
+        Chart.defaults.plugins.legend.display = false;
+        let ctx = document.getElementById("myChart3").getContext('2d');
+        const data = {
+            labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек', ],
+            datasets: [{
+                // label: '# of Votes',
+                data: [18, 30, 29, 45, 38, 19, 21, 40, 48, 43, 39, 20],
+                lineTension: 1,
+                fill: true,
+                backgroundColor: 'rgba(55, 81, 255, 0.1)', // Цвет фона
+                borderColor: 'rgba(0, 73, 141, 1)', // Цвет границы
+                borderWidth: 1,
+            }]
         };
-        new Chart(ctx, {
-            type: 'line', // Тип графики
-            data: {
-                labels: tags,
-                datasets: [
-                    dataSales2020,
-                    // Больше данных здесь....
-                ]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }],
-                },
-            }
-        });
-    }
-    // Получение ссылки на элемент canvas в DOM
+        const options = {
+            scales: {
+                yAxes: [{
+                    display: false,
+                }],
 
-    //Ставим загрузку диаграммы на событие загрузки страницы
-    // Diagram()
+
+            }
+        }
+        console.log(Chart.defaults)
+        const lineChart = new Chart(ctx, {
+            type: 'line',
+            axisX: {
+                labelAngle: 0
+            },
+            data: data,
+            options: options,
+        })
+    }
+
+    lineDiagram()
 
 
 })
