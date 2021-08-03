@@ -1201,6 +1201,20 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+.show__all .select {
+  position: absolute;
+  width: 100%;
+  background: transparent !important;
+}
+.show__all .select span {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+.show__all .select li {
+  justify-content: center;
 }
 
 .categories {

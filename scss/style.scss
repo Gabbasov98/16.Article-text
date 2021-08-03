@@ -726,6 +726,20 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    & .select {
+        position: absolute;
+        width: 100%;
+        background: transparent !important;
+        & span {
+            opacity: 0;
+            visibility: hidden;
+            display: none;
+        }
+        & li {
+            justify-content: center;
+        }
+    }
 }
 
 .categories {
