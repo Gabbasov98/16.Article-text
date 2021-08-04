@@ -1,13 +1,12 @@
-// const { Chart } = require("./chart.min");
-
-// const { Chart } = require("./chart.min");
-
 $(document).ready(function() {
-    $(" .select").niceSelect()
+    $(" .select").niceSelect() <<
+        << << < HEAD
     $(".table__head-title").click(function() {
-        console.log(true)
-        $(this).toggleClass("table__head-title--active")
-    })
+            console.log(true)
+            $(this).toggleClass("table__head-title--active")
+        }) ===
+        === = >>>
+        >>> > 6 a625f74c0ec11f504b0b9b3b180f47ac1ab926a
 
     $(".table__check input").click(function() {
         if ($(this).is(':checked')) {
@@ -29,8 +28,12 @@ $(document).ready(function() {
                 div.siblings(".datapicker__show").removeClass("datapicker__show--active")
             }
         }
-
     });
+
+
+    $(".table__head-title").click(function() {
+        $(this).toggleClass("table__head-title--active")
+    })
 
 
     function doughnutDiagram() {
@@ -41,22 +44,17 @@ $(document).ready(function() {
                 // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                 datasets: [{
                     label: '# of Votes',
-                    data: [20, 20, 15, 7],
+                    data: [20, 20, 15],
                     backgroundColor: [
                         'rgba(111, 82, 237, 1)',
                         'rgba(255, 184, 0, 1)',
-                        'rgba(255, 76, 97, 1)',
                         'rgba(51, 214, 159, 1)',
-                        // 'rgba(255, 159, 64, 0.2)'
                     ],
                     borderColor: [
                         'rgba(111, 82, 237, 1)',
                         'rgba(255, 184, 0, 1)',
-                        'rgba(255, 76, 97, 1)',
                         'rgba(51, 214, 159, 1)',
-                        // 'rgba(255, 159, 64, 1)'
                     ],
-                    // borderWidth: 1
                 }]
             },
             options: {
@@ -96,12 +94,15 @@ $(document).ready(function() {
         });
     }
 
-    function lineDiagram() {
+    function lineDiagram() { <<
+        << << < HEAD
 
+            ===
+            === = >>>
+            >>> > 6 a625f74c0ec11f504b0b9b3b180f47ac1ab926a
         Chart.defaults.scale.beginAtZero = true;
         Chart.defaults.scale.ticks.maxRotation = 0;
         Chart.defaults.scale.ticks.backdropColor = 'rgba(159, 162, 180,1)'
-            // Chart.defaults.scale.ticks.padding = 10;
         Chart.defaults.font.size = 10;
         Chart.defaults.font.family = 'Proxima Nova';
         Chart.defaults.plugins.legend.display = false;
@@ -143,8 +144,15 @@ $(document).ready(function() {
     }
     if (document.getElementById('myChart2')) {
         doughnutDiagram2()
-    }
+    } <<
+    << << < HEAD
     lineDiagram()
 
 
+    ===
+    === =
+    if (document.getElementById('myChart3')) {
+        lineDiagram()
+    } >>>
+    >>> > 6 a625f74c0ec11f504b0b9b3b180f47ac1ab926a
 })
