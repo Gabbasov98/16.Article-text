@@ -364,14 +364,29 @@ main {
         line-height: 14px;
         color: #494A4A;
         margin-bottom: 17px;
+        &-title {
+            &.table__head-title--active {
+                & svg {
+                    transform: rotate(180deg);
+                    & path {
+                        fill: #00498D;
+                    }
+                }
+            }
+        }
         & div {
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            & img {
-                width: 7.5px;
+            & svg {
                 margin-left: 3px;
+                &:hover {
+                    cursor: pointer;
+                    & path {
+                        fill: #00498D;
+                    }
+                }
             }
             &:nth-child(1) {
                 width: 28.3%;
@@ -738,6 +753,9 @@ main {
         }
         & li {
             justify-content: center;
+        }
+        & .list {
+            top: -400%;
         }
     }
 }
