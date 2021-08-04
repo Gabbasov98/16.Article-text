@@ -1,12 +1,9 @@
 $(document).ready(function() {
-    $(" .select").niceSelect() <<
-        << << < HEAD
+    $(".select").niceSelect()
+
     $(".table__head-title").click(function() {
-            console.log(true)
-            $(this).toggleClass("table__head-title--active")
-        }) ===
-        === = >>>
-        >>> > 6 a625f74c0ec11f504b0b9b3b180f47ac1ab926a
+        $(this).toggleClass("table__head-title--active")
+    })
 
     $(".table__check input").click(function() {
         if ($(this).is(':checked')) {
@@ -31,9 +28,7 @@ $(document).ready(function() {
     });
 
 
-    $(".table__head-title").click(function() {
-        $(this).toggleClass("table__head-title--active")
-    })
+
 
 
     function doughnutDiagram() {
@@ -94,12 +89,7 @@ $(document).ready(function() {
         });
     }
 
-    function lineDiagram() { <<
-        << << < HEAD
-
-            ===
-            === = >>>
-            >>> > 6 a625f74c0ec11f504b0b9b3b180f47ac1ab926a
+    function lineDiagram() {
         Chart.defaults.scale.beginAtZero = true;
         Chart.defaults.scale.ticks.maxRotation = 0;
         Chart.defaults.scale.ticks.backdropColor = 'rgba(159, 162, 180,1)'
@@ -144,15 +134,10 @@ $(document).ready(function() {
     }
     if (document.getElementById('myChart2')) {
         doughnutDiagram2()
-    } <<
-    << << < HEAD
+    }
     lineDiagram()
 
-
-    ===
-    === =
     if (document.getElementById('myChart3')) {
         lineDiagram()
-    } >>>
-    >>> > 6 a625f74c0ec11f504b0b9b3b180f47ac1ab926a
+    }
 })
