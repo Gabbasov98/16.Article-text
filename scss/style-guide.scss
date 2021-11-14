@@ -4,6 +4,7 @@ $blue-color:#00498D;
 $green-color:#00C48C;
 $orange-color:#FFAD4C;
 $red-color:#E75E5E;
+$black-color:#494A4A;
 // Buttons 
 .buttons {
     display: flex;
@@ -157,6 +158,23 @@ $red-color:#E75E5E;
     }
 }
 
+.red-btn {
+    background-color: $red-color;
+    color: #fff;
+    &:hover {
+        background-color: darken($red-color, 5%) !important;
+        color: #fff;
+    }
+    &:active {
+        background-color: darken($red-color, 10%) !important;
+        color: #fff;
+    }
+    &:focus {
+        box-shadow: 0px 0px 0px 4px #9BCFFD;
+        background-color: $red-color;
+    }
+}
+
 // Input
 .inputs {
     padding: 20px 50px;
@@ -173,7 +191,7 @@ input {
     padding: 6px 10px;
     color: #494A4A;
     &::placeholder {
-        color: #E4E4E4;
+        color: #B4B4B4;
     }
 }
 
@@ -548,11 +566,200 @@ input[type='radio']:checked+label:after {
     }
     & span {
         width: 65px;
-        font-size: 12px;
+        font-size: 14px;
         line-height: 15px;
-        color: #9F9F9F;
+        color: $black-color;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 }
+
+.drp-buttons {
+    display: none !important;
+}
+
+input[name='dates'],
+input[name='datesright'] {
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    height: 51px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 13px;
+    line-height: 16px;
+    color: #000000;
+    background-image: url(../img/select-arrow.svg), url(../img/calendar.svg);
+    background-repeat: no-repeat;
+    background-position: right 12.5px center, 9px center;
+    padding-left: 40px;
+    width: 320px;
+    border: none;
+}
+
+input[name='datesright'] {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    background-color: #F5F9FB;
+}
+
+// .daterangepicker {
+//     // display: block !important;
+//     background: #FFFFFF;
+//     box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+//     border-radius: 6px;
+//     padding: 8px 14px;
+//     border: none !important;
+//     &:before,
+//     &:after {
+//         display: none;
+//     }
+//     & table {
+//         border-spacing: 0px 10px !important;
+//         border-collapse: separate !important;
+//     }
+//     & thead {
+//         font-size: 15px !important;
+//         line-height: 20px !important;
+//     }
+//     & tbody {
+//         border-top: 1px dashed #ECEBED;
+//         padding-top: 10px;
+//         font-size: 12px !important;
+//     }
+//     & th,
+//     & td {
+//         color: #1A051D !important;
+//         font-family: ' Proxima Nova', sans-serif !important;
+//         width: 32px !important;
+//         height: 32px !important;
+//         min-width: unset !important;
+//         border: none !important;
+//         &:first-child {
+//             border-radius: 6px 0px 0px 6px;
+//         }
+//         &:last-child {
+//             border-radius: 0px 6px 6px 0px;
+//         }
+//         &.weekend:last-child {
+//             color: #FFA26B !important;
+//         }
+//     }
+//     & td {}
+// }
+// .next,
+// .prev {
+//     &:hover {
+//         background-color: transparent !important;
+//     }
+//     & span {
+//         background: #FFFFFF;
+//         width: 24px !important;
+//         min-width: unset !important;
+//         height: 24px;
+//         box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.07);
+//         border-radius: 6px;
+//         border: none !important;
+//         transform: unset !important;
+//         background-image: url(../img/right-arrow.png);
+//         background-repeat: no-repeat;
+//         background-position: center;
+//         margin-top: 5px;
+//     }
+// }
+// .prev {
+//     & span {
+//         background-image: url(../img/left-arrow.png);
+//     }
+// }
+// .daterangepicker table.table-condensed tbody tr td.in-range {
+//     background: #9CB9D5 !important;
+//     color: #fff !important;
+// }
+// .daterangepicker td.active,
+// .daterangepicker td.active:hover {
+//     background: #00498D !important;
+//     color: #FFFFFF !important;
+//     border-radius: 50% !important;
+//     position: relative;
+//     z-index: 3;
+// }
+// .daterangepicker td.active+.in-range {
+//     position: relative !important;
+//     &:after {
+//         content: '';
+//         position: absolute;
+//         z-index: 1;
+//         height: 100%;
+//         width: 16px;
+//         left: -16px;
+//         top: 0;
+//         background: #9CB9D5;
+//     }
+// }
+// .end-date.in-range {
+//     position: relative !important;
+//     background: #00498D !important;
+//     &:after {
+//         content: '';
+//         position: absolute;
+//         z-index: -2;
+//         height: 100%;
+//         width: 16px;
+//         left: 0px;
+//         top: 0;
+//         background: #9CB9D5;
+//     }
+//     &:before {
+//         content: '';
+//         position: absolute;
+//         z-index: -1;
+//         width: 100%;
+//         height: 100%;
+//         border-radius: 50%;
+//         background: #00498D !important;
+//         top: 0;
+//         left: 0;
+//     }
+// }
+// .monthselect,
+// .yearselect {
+//     float: unset;
+//     display: inline-block;
+// }
+// .monthselect {
+//     width: 100px;
+// }
+// .yearselect {
+//     width: 75px;
+//     & .list {
+//         height: 350px;
+//         overflow-y: auto;
+//         & .mCSB_draggerRail {
+//             width: 5px !important;
+//             background: #E4E4E4 !important;
+//             border-radius: 6px !important;
+//         }
+//         & .mCSB_dragger_bar {
+//             background: #00498D !important;
+//             border-radius: 6px !important;
+//             width: 5px !important;
+//         }
+//         & .mCSB_dragger {
+//             height: 40px !important;
+//         }
+//         & .mCSB_scrollTools {
+//             width: 5px !important;
+//         }
+//         & .mCSB_inside>.mCSB_container {
+//             margin-right: 18px;
+//         }
+//     }
+// }
+// thead tr th.month {
+//     // width: 100% !important;
+//     // display: flex;
+//     // align-items: center;
+//     // justify-content: center;
+// }

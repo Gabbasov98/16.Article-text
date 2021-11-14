@@ -114,6 +114,19 @@
     box-shadow: 0px 0px 0px 4px #9BCFFD;
     background-color: #00C48C; }
 
+.red-btn {
+  background-color: #E75E5E;
+  color: #fff; }
+  .red-btn:hover {
+    background-color: #e44848 !important;
+    color: #fff; }
+  .red-btn:active {
+    background-color: #e03232 !important;
+    color: #fff; }
+  .red-btn:focus {
+    box-shadow: 0px 0px 0px 4px #9BCFFD;
+    background-color: #E75E5E; }
+
 .inputs {
   padding: 20px 50px;
   display: flex;
@@ -128,7 +141,7 @@ input {
   padding: 6px 10px;
   color: #494A4A; }
   input::placeholder {
-    color: #E4E4E4; }
+    color: #B4B4B4; }
 
 .nice-select {
   background: #FFFFFF;
@@ -444,11 +457,165 @@ input[type='radio']:checked + label:after {
       fill: #999999; }
   .pagination span {
     width: 65px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 15px;
-    color: #9F9F9F;
+    color: #494A4A;
     display: flex;
     justify-content: center;
     align-items: center; }
+
+.drp-buttons {
+  display: none !important; }
+
+input[name='dates'],
+input[name='datesright'] {
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  height: 51px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 13px;
+  line-height: 16px;
+  color: #000000;
+  background-image: url(../img/select-arrow.svg), url(../img/calendar.svg);
+  background-repeat: no-repeat;
+  background-position: right 12.5px center, 9px center;
+  padding-left: 40px;
+  width: 320px;
+  border: none; }
+
+input[name='datesright'] {
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  background-color: #F5F9FB; }
+
+.daterangepicker {
+  background: #FFFFFF;
+  box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+  border-radius: 6px;
+  padding: 8px 14px;
+  border: none !important; }
+  .daterangepicker:before, .daterangepicker:after {
+    display: none; }
+  .daterangepicker table {
+    border-spacing: 0px 10px !important;
+    border-collapse: separate !important; }
+  .daterangepicker thead {
+    font-size: 15px !important;
+    line-height: 20px !important; }
+  .daterangepicker tbody {
+    border-top: 1px dashed #ECEBED;
+    padding-top: 10px;
+    font-size: 12px !important; }
+  .daterangepicker th, .daterangepicker td {
+    color: #1A051D !important;
+    font-family: ' Proxima Nova', sans-serif !important;
+    width: 32px !important;
+    height: 32px !important;
+    min-width: unset !important;
+    border: none !important; }
+    .daterangepicker th:first-child, .daterangepicker td:first-child {
+      border-radius: 6px 0px 0px 6px; }
+    .daterangepicker th:last-child, .daterangepicker td:last-child {
+      border-radius: 0px 6px 6px 0px; }
+    .daterangepicker th.weekend:last-child, .daterangepicker td.weekend:last-child {
+      color: #FFA26B !important; }
+
+.next:hover,
+.prev:hover {
+  background-color: transparent !important; }
+.next span,
+.prev span {
+  background: #FFFFFF;
+  width: 24px !important;
+  min-width: unset !important;
+  height: 24px;
+  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.07);
+  border-radius: 6px;
+  border: none !important;
+  transform: unset !important;
+  background-image: url(../img/right-arrow.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 5px; }
+
+.prev span {
+  background-image: url(../img/left-arrow.png); }
+
+.daterangepicker table.table-condensed tbody tr td.in-range {
+  background: #9CB9D5 !important;
+  color: #fff !important; }
+
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+  background: #00498D !important;
+  color: #FFFFFF !important;
+  border-radius: 50% !important;
+  position: relative;
+  z-index: 3; }
+
+.daterangepicker td.active + .in-range {
+  position: relative !important; }
+  .daterangepicker td.active + .in-range:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 16px;
+    left: -16px;
+    top: 0;
+    background: #9CB9D5; }
+
+.end-date.in-range {
+  position: relative !important;
+  background: #00498D !important; }
+  .end-date.in-range:after {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    height: 100%;
+    width: 16px;
+    left: 0px;
+    top: 0;
+    background: #9CB9D5; }
+  .end-date.in-range:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #00498D !important;
+    top: 0;
+    left: 0; }
+
+.monthselect,
+.yearselect {
+  float: unset;
+  display: inline-block; }
+
+.monthselect {
+  width: 100px; }
+
+.yearselect {
+  width: 75px; }
+  .yearselect .list {
+    height: 350px;
+    overflow-y: auto; }
+    .yearselect .list .mCSB_draggerRail {
+      width: 5px !important;
+      background: #E4E4E4 !important;
+      border-radius: 6px !important; }
+    .yearselect .list .mCSB_dragger_bar {
+      background: #00498D !important;
+      border-radius: 6px !important;
+      width: 5px !important; }
+    .yearselect .list .mCSB_dragger {
+      height: 40px !important; }
+    .yearselect .list .mCSB_scrollTools {
+      width: 5px !important; }
+    .yearselect .list .mCSB_inside > .mCSB_container {
+      margin-right: 18px; }
 
 /*# sourceMappingURL=style-guide.css.map */

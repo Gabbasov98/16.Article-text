@@ -1,6 +1,190 @@
 $(document).ready(function() {
     $(".select").niceSelect()
 
+    class daterangepickerDoubleInput extends HTMLElement {
+
+        constructor() {
+            super();
+            this.innerHTML =
+                `
+                <div class="combine-input-container" id="combine-input-container">
+                <div class="c-input-container c1-container">
+                    <input type='text' class="c-input c1-input" id="c1">
+                    <label alt='Departure' class="c-label c1-label"></label>
+                </div>
+                <div class="c-input-container c2-container">
+                    <input type='text' class="c-input c2-input" id="c2">
+                    <label alt='Return' class="c-label c2-label"></label>
+                </div>
+                </div>
+                `
+            init()
+
+            function init() {
+                // http://www.daterangepicker.com/
+                $('#combine-input-container').daterangepicker({
+                    minDate: new Date(),
+                    "linkedCalendars": false,
+                    opens: "center",
+                    // format: 'MMM D, YYYY',
+                    autoUpdateInput: true,
+                    locale: {
+                        "format": "MM/DD/YYYY",
+                        "separator": " - ",
+                        "applyLabel": "Apply",
+                        "cancelLabel": "Cancel",
+                        "fromLabel": "From",
+                        "toLabel": "To",
+                        "customRangeLabel": "Custom",
+                        "weekLabel": "W",
+                        "cancelLabel": 'Reset',
+                        "applyLabel": 'Done',
+                        "daysOfWeek": [
+                            "Вс",
+                            "Пн",
+                            "Вт",
+                            "Ср",
+                            "Чт",
+                            "Пт",
+                            "Сб"
+                        ],
+                        "monthNames": [
+                            "Январь",
+                            "Февраль",
+                            "Март",
+                            "Апрель",
+                            "Май",
+                            "Июнь",
+                            "Июль",
+                            "Август",
+                            "Сентябрь",
+                            "Октябрь",
+                            "Ноябрь",
+                            "Декабрь"
+                        ],
+                        "firstDay": 1
+                    }
+                    // locale: {
+                    //     format: 'MMM D, YYYY',
+                    //     daysOfWeek: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+                    //     cancelLabel: 'Reset',
+                    //     applyLabel: 'Done',
+                    // },
+                });
+
+                //apply value in input
+                $('#combine-input-container').on('apply.daterangepicker', function(ev, picker) {
+                    $('#c1').val(picker.startDate.format('MMM D, YYYY'))
+                    $('#c2').val(picker.endDate.format('MMM D, YYYY'))
+                    $('.c1-label').addClass('c-input-fill');
+                    $('.c2-label').addClass('c-input-fill');
+                    $('div.drp-buttons').prepend('<span class="drp-num-nights">' + picker.endDate.diff(picker.startDate, 'days') + ' nights' + '</span>')
+                });
+
+                //clear value on cancel
+                $('#combine-input-container').on('cancel.daterangepicker', function(ev, picker) {
+                    $('#c1').val(' ');
+                    $('#c2').val(' ');
+                    picker.setStartDate(moment())
+                    picker.setEndDate(moment())
+                    $('.c1-label').removeClass('c-input-fill');
+                    $('.c2-label').removeClass('c-input-fill');
+                    $
+                });
+
+                // check if input are not empty than apply css
+                $('.jsContainer').on('keyup change', function() {
+                    if ($('#c1').val() === '') {
+                        $('.c1-label').removeClass('c-input-fill');
+                    }
+                    if ($('#c2').val() === '') {
+                        $('.c2-label').removeClass('c-input-fill');
+                    }
+                }).change();
+            }
+        }
+
+    }
+
+    window.customElements.define('daterangepicker-two-input', daterangepickerDoubleInput);
+
+
+    $('input[name="dates"]').daterangepicker({
+        autoApply: true,
+        locale: {
+            "format": "MM/DD/YYYY",
+            "separator": " - ",
+            "applyLabel": "Apply",
+            "cancelLabel": "Cancel",
+            "fromLabel": "From",
+            "toLabel": "To",
+            "customRangeLabel": "Custom",
+            "weekLabel": "W",
+            "daysOfWeek": [
+                "Вс",
+                "Пн",
+                "Вт",
+                "Ср",
+                "Чт",
+                "Пт",
+                "Сб"
+            ],
+            "monthNames": [
+                "Январь",
+                "Февраль",
+                "Март",
+                "Апрель",
+                "Май",
+                "Июнь",
+                "Июль",
+                "Август",
+                "Сентябрь",
+                "Октябрь",
+                "Ноябрь",
+                "Декабрь"
+            ],
+            "firstDay": 1
+        }
+    });
+    $('input[name="datesright"]').daterangepicker({
+        autoApply: true,
+        "opens": "left",
+        locale: {
+            "format": "MM/DD/YYYY",
+            "separator": " - ",
+            "applyLabel": "Apply",
+            "cancelLabel": "Cancel",
+            "fromLabel": "From",
+            "toLabel": "To",
+            "customRangeLabel": "Custom",
+            "weekLabel": "W",
+            "daysOfWeek": [
+                "Вс",
+                "Пн",
+                "Вт",
+                "Ср",
+                "Чт",
+                "Пт",
+                "Сб"
+            ],
+            "monthNames": [
+                "Январь",
+                "Февраль",
+                "Март",
+                "Апрель",
+                "Май",
+                "Июнь",
+                "Июль",
+                "Август",
+                "Сентябрь",
+                "Октябрь",
+                "Ноябрь",
+                "Декабрь"
+            ],
+            "firstDay": 1
+        }
+    });
+
     $(".table__head-title").click(function() {
         $(this).toggleClass("table__head-title--active")
     })
@@ -93,7 +277,7 @@ $(document).ready(function() {
         Chart.defaults.scale.beginAtZero = true;
         Chart.defaults.scale.ticks.maxRotation = 0;
         Chart.defaults.scale.ticks.backdropColor = 'rgba(159, 162, 180,1)'
-        Chart.defaults.font.size = 10;
+        Chart.defaults.font.size = 14;
         Chart.defaults.font.family = 'Proxima Nova';
         Chart.defaults.plugins.legend.display = false;
         let ctx = document.getElementById("myChart3").getContext('2d');
@@ -135,7 +319,6 @@ $(document).ready(function() {
     if (document.getElementById('myChart2')) {
         doughnutDiagram2()
     }
-    lineDiagram()
 
     if (document.getElementById('myChart3')) {
         lineDiagram()
